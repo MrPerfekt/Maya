@@ -1,0 +1,31 @@
+\begin{tikzpicture}[scale=1.5]
+\pgfmathsetmacro\VarGamma{35};
+\pgfmathsetmacro\VarCosAlpha{cos(90-\VarGamma*2)};
+\pgfmathsetmacro\VarSinAlpha{sin(90-\VarGamma*2)};
+
+\coordinate (N) at (90-\VarGamma:2);
+\coordinate (O) at (0,0);
+\coordinate (E) at (90:3);
+\coordinate (Y) at (90:4);
+\coordinate (X) at (0:4);
+\coordinate (A) at (90-2*\VarGamma:3);
+\coordinate (TU) at (3*\VarCosAlpha,0);
+\coordinate (TO) at (3*\VarCosAlpha,3);
+\coordinate (Ttxt) at (3*\VarCosAlpha,2*\VarSinAlpha);
+\coordinate (Ctxt) at (2*\VarCosAlpha,0);
+
+%Achsen zeichnen
+\draw[thin,->] (-2,0) -- (X) node[right]{$x$};
+\draw[thin,->] (0,-1) -- (Y) node[left]{$y$};
+\draw[thick] (-\VarGamma:2) -- (-\VarGamma:-2);
+\draw[very thick,->] (E) -- (O);
+\draw[dashed] (O) -- (90-\VarGamma:4);
+\draw[very thick,->] (O) -- (A);
+\draw[thick] (TU) -- (TO);
+\draw (Ttxt) node[right]{$a$};
+\draw (Ctxt) node[below]{$b$};
+
+\pic[draw=black,angle eccentricity=0.8,angle radius=1.5cm,pic text={$\gamma$}] {angle=N--O--E};
+\pic[draw=black,angle eccentricity=0.8,angle radius=1.5cm,pic text={$\gamma$}] {angle=A--O--N};
+\pic[draw=black,angle eccentricity=0.8,angle radius=1.5cm,pic text={$\alpha$}] {angle=X--O--A};
+\end{tikzpicture}

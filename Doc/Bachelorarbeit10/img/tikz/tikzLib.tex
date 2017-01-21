@@ -1,0 +1,40 @@
+\usetikzlibrary{arrows}
+\usetikzlibrary{positioning}
+\usetikzlibrary{calc}
+
+%Used by Geogebra
+\newcommand{\degre}{\ensuremath{^\circ}}
+
+\definecolor{qqqqcc}{rgb}	{0,0,0.8}
+\definecolor{qqqqff}{rgb}	{0,0,1}
+\definecolor{qqwuqq}{rgb}	{0,0.39,0}
+\definecolor{uququq}{rgb}	{0.25,0.25,0.25}
+\definecolor{zzffqq}{rgb}	{0.6,1,0}
+\definecolor{ffqqqq}{rgb}	{1,0,0}
+\definecolor{ffdxqq}{rgb}	{1,0.84,0}
+
+
+% Draws a part of an circle
+% \strip{color}{sector angle}{sector number}{outer_radius}{inner_radius}
+\tikzstyle{wired}=[draw=gray!30, line width=0.15mm]
+\newcommand{\drawStrip}[5]{
+	\filldraw[#1,wired]
+	({(#2) *  (#3)}		:						{(#5)}	) arc
+	({(#2) *  (#3)}		:	{(#2) * ((#3) + 1)}	:	{(#5)}	) --
+	({(#2) * ((#3) + 1)}	:						{(#4)}	) arc
+	({(#2) * ((#3) + 1)}	:	{(#2) *  (#3)}		:	{(#4)}	) -- cycle;
+}
+
+%Draw a Square wave
+%tikzstyle, count, width high, width low, scale x, scale y
+\newcommand*{\drawSquarewave}[6]{
+	\pgfmathsetmacro{\scalex}{#5}
+	\pgfmathsetmacro{\scaley}{#6}
+	\pgfmathsetmacro{\onLen}{#3 * \scalex}
+	\pgfmathsetmacro{\offLen}{#4 * \scalex}
+	\pgfmathsetmacro{\width}{\onLen + \offLen}
+	\foreach \cpos in {0,...,#2}{
+		\pgfmathsetmacro{\cwidth}{\cpos * \width}
+		\draw (0,0)[#1] plot coordinates{ (\cwidth,0) (\cwidth,\scaley) (\cwidth + \onLen,\scaley) (\cwidth + \onLen,0) (\cwidth + \width,0) };
+	}
+}

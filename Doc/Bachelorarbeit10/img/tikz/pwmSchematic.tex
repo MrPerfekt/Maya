@@ -1,0 +1,22 @@
+\tikzstyle{line}=[color=black,line width=1.5pt]
+\newcommand*{\drawPWMschematic}[1]{
+	\pgfmathsetmacro{\value}{#1 / 255}
+	\pgfmathtruncatemacro{\dutyCycle}{round(100 * \value)}
+	\draw(3,1) node[above]{\makebox[0pt][l]{\dutyCycle\%~Duty Cycle - analogWrite(#1)} };
+	\draw(-0.5,1) node[left]{\makebox[0pt][l]{5V} };
+	\draw(-0.5,0) node[left]{\makebox[0pt][l]{0V} };
+	\pgfmathsetmacro{\offValue}{1 - \value}	
+	\drawSquarewave{line}{5}{\value}{\offValue}{2}{1}
+}
+\makebox[\linewidth]{
+\begin{tikzpicture}
+	\newcounter{cpos}
+	\foreach \n in {0,64,127,191,255} {
+		\pgfmathsetmacro{\pos}{\value{cpos} * 1.65}
+		\begin{scope}[shift={(0,\pos )}]
+			\drawPWMschematic{\n}
+		\end{scope}
+		\stepcounter{cpos}
+        }
+\end{tikzpicture}
+}

@@ -1,0 +1,20 @@
+\center
+\begin{circuitikz}
+\draw (0,2)
+	to[R] (2,2)
+	to[leD*] (2,0)
+	-- (0,0);
+\draw(0,2) to[american voltage source] (0,0);
+
+\draw (4,1) node[npn,photo] (trans) {}
+	(trans.collector) node[anchor=south] {}
+	(trans.emitter) node[anchor=north] {};
+\draw(4,2)
+	--(4,2)
+	to[R,*-o](4,4) node[above]{V};
+\draw(4,2)
+	to[short,*-o](5,2) node[right]{ADC};
+\draw(trans.emitter)
+	to[short,-o](4,0) node[ground]{};
+\draw(4,2) -- (trans.collector);
+\end{circuitikz}

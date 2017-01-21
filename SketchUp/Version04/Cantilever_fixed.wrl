@@ -1,0 +1,42 @@
+#VRML V2.0 utf8
+# Created by netfabb 5.2.0 64bit
+
+NavigationInfo {
+	type [ "EXAMINE", "ANY" ]
+	}
+
+Transform {
+	scale 1 1 1
+	translation 0 0 0
+	children [
+		Shape {
+			geometry IndexedFaceSet {
+				creaseAngle .5
+				solid FALSE
+				colorPerVertex FALSE
+				coord Coordinate {
+					point [
+						]
+
+					}
+
+				color Color  {
+					color [
+						]
+
+					}
+
+				coordIndex [
+					]
+
+				colorIndex [
+					]
+
+				}
+
+			}
+
+		]
+
+	}
+

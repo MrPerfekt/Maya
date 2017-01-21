@@ -1,0 +1,130 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This file defines the titlepage and other formal                    %
+% sections of the thesis                                              %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagestyle{empty}
+% First pages are numbered in roman style
+\pagenumbering{Roman}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Titlepage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{titlepage}
+\large
+\begin{center}
+BACHELORARBEIT\\\vfill
+{\LARGE\bf Maya}\\
+[5mm]
+Laser-Zielvorrichtung für ein bewegliches Ziel
+\vfill
+ausgeführt zur Erlangung des akademischen Grades\\
+eines Bachelors unter der Leitung von\\
+\vfill
+%-- Name und akad. Grad des Prof. --\\
+Univ.Ass. Dipl.-Ing. Dr.techn. Friedrich Bauer\\\vfill
+am\\\vfill
+{\Large\bf Institut für Computertechnik (E384)}\\
+der Technischen Universität Wien
+\vfill
+durch
+\vfill
+Andreas Gruber\\
+Matr.Nr. 1425111\\
+1180 Wien, Martinstraße 1 / 16\\\vfill
+\end{center}
+\today \hfill\hrulefill
+\end{titlepage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Deutsche Kurzfassung
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\pagestyle{plain}
+\begin{center}\bf Kurzfassung\end{center}
+
+
+Die Motivation für diese Bachelorarbeit entspringt aus der Lehrveranstaltung "`Mikrocomputer Labor"', aus dem Curriculum "`Elektrotechnik und Informationselektronik"', bei welchen Studierende verschiedene Aufgabenstellungen mit Mikrocontrollern programmieren. Um dieses Labor interessant zu gestalten, ist es wichtig, immer wieder neue Hardware-Aufbauten für das Labor zu entwerfen.
+
+Zu den Kriterien für den Prototyp zählt, dass er sowohl mechanisch als auch elektrisch tolerant gegenüber Fehlbedienungen sein muss, da dieser über einen längeren Zeitraum eingesetzt werden soll. Es ist natürlich wichtig, dass er für Studierende ansprechend und interessant ist und eine fächerübergreifende Aufgabe für diese darstellt.
+
+Als Aufgabenstellung hat sich aus den gegebenen Kriterien ein beweglicher Laserdetektor und eine steuerbare Spiegelablenkeinheit, welche einen Laser positioniert, ergeben. Der Laserdetektor ist ein 4-Quadrantendetektor, welcher aus vier separaten Fotodioden zusammengesetzt ist. Der gesamte Laserdetektor ist auf einer drehbar gelagerten Scheibe montiert und wird über Schleifringe mit dem Mikrocontroller verbunden. Als Rotationsencoder fungieren zwei Lichtschranken und eine, mit einem Strichcode bedruckte, Folie.
+
+Die Schwerpunkte dieser Arbeit liegen in der Mechanik, Elektronik und der Software, welche für diesen Aufbau notwendig ist, sowie einer Referenzlösung für das Labor.
+
+\null\vfil
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Abstract in english
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{center}\bf Abstract\end{center}
+%Short version of your thesis \dots\\
+%\par\vfil\null
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Acknowledgements are optional at a bachelor thesis
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+\null\vfil
+\begin{center}\bf Danksagung\end{center}
+Danken möchte ich in erster Linie meinem Betreuer, Herrn Dr. Friedrich Bauer, für seine ausgiebige Unterstützung. Durch stetig kritisches Hinterfragen und konstruktive Kritik verhalf er mir zu einer durchdachten These und Fragestellung. Dank seiner herausragenden Expertise konnte er mich immer wieder in meiner Recherche und bei meinen Fragen unterstützen. Vielen Dank für Zeit und Mühen, die Sie in meine Arbeit investiert haben.
+\par\vfil\null
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Table of contents
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\renewcommand{\contentsname}{Inhaltsverzeichnis}
+\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Abbreviations
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter*{Abkürzungen}
+\markboth{Abkürzungen}{}
+\begin{bfscript}{Irgendwas}
+% enter your common and not so comman abbreviatons here
+% eventually put them in a seperate file to sort them by an external application
+\item[FSM] Finite State Machine, Endlicher Automat
+\item[FPU] Floatingpoint Unit, Gleitkommaeinheit
+\item[IIR] Infinity Impulse Response, Unendliche Impulsantwort
+\item[ISR] Interrupt Service Routine
+\item[OPV] Operationsverstärker
+\item[VV-OPV] Spannungsgesteuerter Operationsverstärker
+\item[PSSG] Phasenselektiven Synchrongleichrichter
+\item[PUSD] Phasenunabhängigen Synchrondemodulator
+\item[TIA] Transimpedance Amplifier, Transimpedanzverstärker
+\end{bfscript}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Symbols
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\chapter*{Mathematische Symbole (wenn benötigt)}
+%\markboth{Symbols}{}
+%Diese Tabelle enthält alle in dieser Bachelorarbeit verwendeten mathematischen Symbole.
+%\begin{bfscript}{Irgendwas}
+%% enter mathematical symbols in this table
+%\begin{table}[htp]
+%\begin{center}
+%\begin{tabular}{|p{0.15\linewidth}|p{0.5\linewidth}|p{0.15\linewidth}|}
+%\hline 
+%Symbol & Definition & Einheit \tabularnewline
+%\hline 
+%\hline 
+%$\alpha$ & Winkel zwischen Stromvektoren & rad\tabularnewline
+%\hline 
+%\end{tabular}
+%\end{center}
+%\end{table}
+%\end{bfscript}
+
+% Start numbering arabic here
+\newpage
+\pagenumbering{arabic}

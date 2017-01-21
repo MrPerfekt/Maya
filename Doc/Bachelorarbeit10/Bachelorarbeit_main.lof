@@ -1,0 +1,31 @@
+\select@language {german}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces 3D-Modell einer Spiegelablenkeinheit und einem Pendel.\relax }}{1}{figure.caption.3}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces 3D-Modell des Prototypen.\relax }}{3}{figure.caption.4}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Winkel bei der Laserablenkeinheit.\relax }}{4}{figure.caption.5}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces 3D-Modell der Spiegelablenkeinheit.\relax }}{5}{figure.caption.6}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Funktionsweise eines Drehgebers.\relax }}{5}{figure.caption.7}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Aufnahme des Quadratursignals der drehbaren Scheibe.\relax }}{6}{figure.caption.8}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces FSM eines Drehgebers.\relax }}{7}{figure.caption.9}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Aufnahme des Quadratursignals der drehbaren Scheibe.\relax }}{8}{figure.caption.10}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Scheibe f\IeC {\"u}r den Rotationsencoder.\relax }}{9}{figure.caption.11}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Aufbau eines Schrittmotors mit unipolarer Beschaltung. Quelle: Wikipedia \cite {web:schrittmotor}\relax }}{11}{figure.caption.12}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Aufbau einer H-Br\IeC {\"u}cke f\IeC {\"u}r eine Windung\relax }}{12}{figure.caption.13}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces FSM eines Schrittmotors mit Vollschritte.\relax }}{13}{figure.caption.14}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces FSM eines Schrittmotors mit Halbschritte.\relax }}{14}{figure.caption.15}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Einfache Auswertung eines Fototransistors.\relax }}{15}{figure.caption.16}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Transimpedanzverst\IeC {\"a}rker.\relax }}{16}{figure.caption.17}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Abrupter Lichtanstieg bei Transimpedanzverst\IeC {\"a}rker.\relax }}{17}{figure.caption.18}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Abrupter Lichtabfall bei Transimpedanzverst\IeC {\"a}rkers.\relax }}{17}{figure.caption.19}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Quadrantenfotodiode. Quelle: Wikipedia \cite {web:quadrantendiode}\relax }}{18}{figure.caption.20}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Zusammenspiel der Komponenten\relax }}{20}{figure.caption.21}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Dauer der Interrupts f\IeC {\"u}r Schrittmotoren.\relax }}{23}{figure.caption.22}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Timing der Interrupts f\IeC {\"u}r die Auswertung der Fotodioden.\relax }}{25}{figure.caption.23}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Ausgabewerte einer Fotodiode mit und ohne St\IeC {\"o}reinfl\IeC {\"u}sse, welche im normalen Betrieb auftreten.\relax }}{26}{figure.caption.24}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Ausgabewerte der Fotodioden in einer gemeinsamen Grafik.\relax }}{27}{figure.caption.25}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Dreipunktregler basierend auf addierten Messwerten.\relax }}{27}{figure.caption.26}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Dreipunktregler basierend auf Maximum Werte.\relax }}{28}{figure.caption.27}
+\addvspace {10\p@ }

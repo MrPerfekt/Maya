@@ -1,0 +1,8 @@
+\begin{tikzpicture}[scale=1]
+\begin{axis}[surf, z buffer=sort, opacity=0.5, restrict expr to domain={z >= 5}{1:1},xlabel=x,ylabel=y]
+\addplot3 [color=red, opacity=1] table[x index=0, y index=1, z index=2, col sep=tab] {img/DiodePositionPlot/DiodePositionPlot04.txt};
+\addplot3 [color=blue] table[x index=0, y index=1, z index=3, col sep=tab] {img/DiodePositionPlot/DiodePositionPlot04.txt};
+\addplot3 [color=green] table[x index=0, y index=1, z index=4, col sep=tab] {img/DiodePositionPlot/DiodePositionPlot04.txt};
+\addplot3 [color=orange, opacity=0.4] table[x index=0, y index=1, z index=5, col sep=tab] {img/DiodePositionPlot/DiodePositionPlot04.txt};
+\end{axis}
+\end{tikzpicture}

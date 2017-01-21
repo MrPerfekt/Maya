@@ -1,0 +1,76 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Additional user defined commands for Latex documents                %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Mathematical expressions							               	  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\mat}[1]{\ensuremath{\mathbf #1}}
+\newcommand{\set}[1]{\ensuremath{\mathbf #1}}
+\newcommand{\cset}[1]{\ensuremath{\mathbf{\mathcal #1}}}
+\renewcommand{\vec}[1]{\ensuremath{\mathbf #1}}
+
+\newcommand{\argmax}[1]{\ensuremath{\arg\hspace{-0.4ex}\max_{\hspace*{-3.0ex}#1}}}
+\newcommand{\argmin}[1]{\ensuremath{\arg\min_{\hspace*{-4.0ex}#1}}}
+
+\newcommand{\argmaxi}[1]{\ensuremath{\arg\hspace{-0.4ex}\max_{#1}}}
+\newcommand{\argmini}[1]{\ensuremath{\arg\hspace{-0.4ex}\min_{#1}}}
+
+\newcommand{\NP}{\ensuremath{\mathcal{NP}}}
+\newcommand{\PP}{\ensuremath{\mathcal{P}}}
+\newcommand{\e}[2]{\ensuremath{\{#1,#2\}}}
+\newcommand{\tup}[1]{\ensuremath{\langle#1\rangle}}
+\newcommand{\bigO}[1]{\ensuremath{\mathcal{O}\left(#1\right)}}
+
+\newcommand{\trans}[1]{\ensuremath{{#1}^\top}}
+\newcommand{\diag}[1]{\ensuremath{\mathrm{diag}\left(#1\right)}}
+
+\newcommand{\elmat}[2]{\ensuremath{#1 \odot #2}}
+\renewcommand{\Re}{\mathbb{R}}
+
+\newcommand{\incfig}[3]{\ifx\pdfoutput\undefined
+                          \epsfig{#1.eps,#2,#3}
+                        \else
+                          \epsfig{#1.eps,#2,#3}
+                        \fi}
+                        
+\newcommand{\bydefn}{\ensuremath{\stackrel{\bigtriangleup}{=}}}
+\newcommand{\prune}[1]{\ensuremath{\mathrm{prune}\left(#1\right)}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Enumerations										               	  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\nth}[1]{\ensuremath{#1^\mathrm{th}}}
+\newcommand{\fst}[1]{\ensuremath{#1^\mathrm{st}}}
+\newcommand{\snd}[1]{\ensuremath{#1^\mathrm{nd}}}
+
+\newcommand{\dollar}{\char36}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Reference to an object							               	  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\eq}[1]{Gleichung~\ref{#1}}
+\newcommand{\Eq}[1]{Gleichung~\ref{#1}}
+\newcommand{\fig}[1]{Abbildung~\ref{#1}}
+\newcommand{\Fig}[1]{Abbildung~\ref{#1}}
+\newcommand{\chap}[1]{Kapitel~\ref{#1}}
+\newcommand{\Chap}[1]{Kapitel~\ref{#1}}
+\newcommand{\sect}[1]{Kapitel~\ref{#1}}
+\newcommand{\Sect}[1]{Kapitel~\ref{#1}}
+\newcommand{\tab}[1]{Tabelle~\ref{#1}}
+\newcommand{\Tab}[1]{Tabelle~\ref{#1}}
+\newcommand{\lst}[1]{Listing~\ref{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Misc												               	  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\labelfig}[2]{\parbox[b]{0.2in}{\Large#1\normalsize\vspace{#2}}}
+
+
+
+          
+                         

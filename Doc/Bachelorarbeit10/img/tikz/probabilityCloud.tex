@@ -1,0 +1,10 @@
+\begin{tikzpicture}
+	\draw[->] (0,0) -- (10,0);
+	\draw[->] (0,0) -- (0,6);
+	\begin{scope}[shift={(5,3)},rotate=30]
+		\foreach \x in {0,0.5,...,2}{
+			\fill  [fill=black, semitransparent] (0,0) ellipse ({2 * \x} and {\x});
+		}
+		\draw[->,color=white,line width=3pt] (-0.5,0) -- +(1,0);
+	\end{scope}
+\end{tikzpicture}

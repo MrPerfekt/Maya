@@ -1,0 +1,5 @@
+\begin{tikzpicture}[scale=0.92]
+\begin{axis}[xlabel=x,ylabel=y]
+\addplot3 [surf, mesh/ordering=y varies, restrict expr to domain={z <= -100 || z >= 100}{1:1}] table[x index=0, y index=1, z expr={(\thisrowno{2}-\thisrowno{3})+(\thisrowno{4}-\thisrowno{5})}, col sep=tab] {img/DiodePositionPlot/DiodePositionPlot03.txt};
+\end{axis}
+\end{tikzpicture}

@@ -1,0 +1,16 @@
+%position, label
+\newcommand*{\drawSingleQuadratureDiagram}[1]{
+	\tikzstyle{line}=[color=black,line width=1.5pt]
+	\draw(0,1) node[left]{1};
+	\draw(0,0) node[left]{0};
+	\begin{scope}[shift={({0.5 * (#1)},0 )}]
+		\drawSquarewave{line}{2}{1}{1}{1}{1}
+	\end{scope}
+}
+
+\begin{tikzpicture}
+	\drawSingleQuadratureDiagram{0}
+	\begin{scope}[shift={(0,1.5 )}]
+	\drawSingleQuadratureDiagram{1}
+	\end{scope}
+\end{tikzpicture}

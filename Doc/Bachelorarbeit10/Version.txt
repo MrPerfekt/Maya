@@ -1,0 +1,7 @@
+Template Version:
+
+v1 - MRathmair - 1.4.2013
+Revised edition of the original template from DBruckner.
+
+v2. MRathmair - 16.4.2013
+A new version (2008) of the guidlines pdf document is available also in german language. Replace the english version

@@ -1,0 +1,71 @@
+\begin{thebibliography}{MWa01}
+
+\bibitem[ES12]{book:elektrischeMesstechnik}
+\textsc{Elmar~Schrüfer}, Bernhard~Z.:
+\newblock \emph{Elektrische Messtechnik}.
+\newblock 10.
+\newblock Hanser, 2012. --
+\newblock ISBN 978--3--446--43079--2
+
+\bibitem[Ger12]{book:elMaschienenAktuatoren}
+\textsc{Gerke}, Prof. Dr.-Ing.~W.:
+\newblock \emph{Elektrische Maschinen und Aktoren}.
+\newblock Oldenbourg Verlag München, 2012. --
+\newblock ISBN 3--540--00730--X
+
+\bibitem[GG03]{book:evolvableSystems}
+\textsc{Gerhard~Goos}, Jan van Leeuwen Andy M. Tyrrell Pauline C. Haddow
+  Jim~T.:
+\newblock \emph{Evolvable Systems: From Biology to Hardware: 5th International
+  Conference, ICES 2003, Trondheim, Norway, March 17-20, 2003. Proceedings}.
+\newblock 5.
+\newblock Springer-Verlag Berlin Heidelberg New York, 2003. --
+\newblock ISBN 978--3--486--71265--0
+
+\bibitem[Goe99]{book:bauelementGrundschaltungen}
+\textsc{Goerth}, Professor Dipl.-Ing.~J.:
+\newblock \emph{Bauelemente und Grundschaltungen}.
+\newblock 1.
+\newblock B. G. Teubner Stuttgart - Leibzig, 1999. --
+\newblock ISBN 978--3--519--06258--5,978--3--322--87191--6
+
+\bibitem[Hag15]{book:elAntriebstechnik}
+\textsc{Hagl}, Rainer:
+\newblock \emph{Elektrische Antriebstechnik}.
+\newblock 2.
+\newblock Carl Hanser Verlag München, 2015. --
+\newblock ISBN 978--3--446--44270--2
+
+\bibitem[MWa01]{book:werkzeugmaschinen}
+\textsc{h.~Manfred Weck~(auth.)}, Prof. Dr.-Ing. Dr.-Ing.~E.:
+\newblock \emph{Werkzeugmaschinen Fertigungssysteme 3: Mechatronische Systeme:
+  Vorschubantriebe und Prozessdiagnose}.
+\newblock 5.
+\newblock Springer Berlin Heidelberg, 2001. --
+\newblock ISBN 978--3--662--10917--5,978--3--662--10916--8
+
+\bibitem[UT02]{book:halbleiterSchaltungstechnik}
+\textsc{Ulrich~Tietze}, E.~G.:
+\newblock \emph{Halbleiter-Schaltungstechnik}.
+\newblock 12.
+\newblock Springer, 2002. --
+\newblock ISBN 3--540--42849--6
+
+\bibitem[Web97]{book:pulseOximeters}
+\textsc{Webster}, John~G.:
+\newblock \emph{Design of pulse oximeters}.
+\newblock Taylor "\&" Francis Group, LLC, 1997
+\newblock (Medical science series). --
+\newblock ISBN 0--7503--0467--7
+
+\bibitem[Wik17a]{web:quadrantendiode}
+\textsc{Wikipedia}.
+\newblock \emph{Quadrantendiode}.
+\newblock 2017
+
+\bibitem[Wik17b]{web:schrittmotor}
+\textsc{Wikipedia}.
+\newblock \emph{Schrittmotor}.
+\newblock 2017
+
+\end{thebibliography}

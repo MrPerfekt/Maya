@@ -1,0 +1,5 @@
+\begin{tikzpicture}[scale=1]
+\begin{axis}[xlabel=x,ylabel=y]
+\addplot3 [surf, mesh/ordering=y varies, restrict expr to domain={z >= 5}{1:1}] table[x index=0, y index=1, z index=4, col sep=tab] {img/DiodePositionPlot/DiodePositionPlot02.txt};
+\end{axis}
+\end{tikzpicture}

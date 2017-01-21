@@ -1,0 +1,349 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                     %
+% Institute of Computer Technology, Gusshausstrasse 27-29, 1040 Wien  %
+%                                                                     %
+% Template Document for a Bachelor Thesis at the ICT                  %
+%                                                                     %
+% Based on documentclass report.                        	          %
+%                                                                     %
+% Authors: Michael Rathmair	and 									  %
+%          Dietmar Bruckner                                           %
+% Version: $Revision: 1.3 $                                           %
+% Datum: $Date: 2012/02/12 $				                          %
+%                                                                     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 1.PACKAGES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% defines thesis as report (oneside, A4 with 11pt fontsize)
+\documentclass[11pt,twoside,a4paper]{ICTthesis}
+\usepackage[usenames]{color}
+% formats the text accourding the set language
+\usepackage[german]{babel}
+% generates indices with the "\index" command
+\usepackage{makeidx}
+% enables import of graphics. We use pdflatex here so do the pdf optimisation.
+%\usepackage[dvips]{graphicx}
+\usepackage[pdftex]{graphicx}
+\usepackage{pdfpages}
+% includes floating objects like tables and figures.
+\usepackage{float}
+% for generating subfigures with ohne indented captions
+\usepackage[hang]{subfigure}
+% redefines and smartens captions of figures and tables (indentation, smaller and boldface)
+\usepackage[hang,small,bf]{caption}
+% enables tabstops and the numeration of lines
+\usepackage{moreverb}
+% enables user defined header and footer lines (former "fancyheadings")
+\usepackage{fancyhdr}
+% Some smart mathematical stuff
+\usepackage{amsmath}
+% For code listings 
+\usepackage{listings}
+% Package for rotating several objects
+\usepackage{rotating}
+\usepackage{natbib}
+\usepackage{epsf}
+\usepackage{dsfont}
+%%%%\usepackage[usenames]{color}
+\usepackage[algochapter, boxruled, vlined]{algorithm2e}
+%Activating and setting of character protruding - if you like
+%\usepackage[activate,DVIoutput]{pdfcprot}
+% If you really need special chars...
+\usepackage[utf8]{inputenc}
+% Hyperlinks
+\usepackage[colorlinks,hyperindex,plainpages=false,%
+pdftitle={Bachelor thesis: Maya},%
+pdfauthor={Andreas Gruber},%
+pdfsubject={Bachelor thesis},%
+pdfkeywords={},%
+pdfpagelabels,%
+pagebackref,%
+bookmarksopen=false%
+]{hyperref}
+
+% For the two different reference lists ...
+\usepackage{multibib}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{array}
+% Additional Packages
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{amsmath}
+\usetikzlibrary{quotes,angles,babel}
+\usepackage{float}
+\usepackage[american,siunitx]{circuitikz}
+\usetikzlibrary{arrows,shapes,calc,positioning}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 2.Settings
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcites{weblink}{Internet Referenzen}
+
+% redifine the paragraph command.
+\makeatletter
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}{3.25ex \@plus1ex \@minus.2ex}{0.3em} {\normalfont\normalsize\bfseries}}
+\renewcommand\subparagraph{\@startsection{subparagraph}{5}{\parindent}{3.25ex \@plus1ex \@minus .2ex}{\normalfont\normalsize\bfseries}}
+\makeatother
+
+%Enables numbers at subsubsections without inserting them into the toc.
+\setcounter{secnumdepth}{3}
+
+% generates the index (command for the subprocessor)
+\makeindex
+
+% default path to your pictures
+\graphicspath{{img/}}
+
+% Counter for the maximum number of "Floatobjects" at the beginning of the page.
+\setcounter{topnumber}{2}
+% Redefines the maximum area which floats my consume at the beginning of the page.
+\def\topfraction{.8}
+% Counter for the maximum numbers of floats at the end of the page
+\setcounter{bottomnumber}{2}
+% Redefines the maximum area which floats my consume at the end of the page.
+\def\bottomfraction{.5}
+% Maximal number of floats per page
+\setcounter{totalnumber}{8}
+% minimal amount of text per page
+\def\textfraction{.2}
+% Redefinition: minimal amount of floats in percent per floatpage.
+\def\floatpagefraction{.6}
+% no indentation at paragraphs
+\setlength{\parindent}{0pt}
+
+% part of the caption package: extra 20pts left and right of captions.
+%\setlength{\captionmargin}{20pt}
+
+% sets the pagelayout
+\setlength{\oddsidemargin}{4mm}
+\setlength{\evensidemargin}{-6mm}
+\setlength{\textwidth}{162mm} 
+\setlength{\textheight}{230mm}
+\setlength{\topmargin}{-5mm}
+
+%part of the "float" Packages:
+\floatstyle{plain}
+% define a new floating object
+\floatname{example}{Example}
+
+\newfloat{example}{hbtp}{loe}[chapter]
+\floatplacement{figure}{hbt}
+\floatplacement{table}{htb}
+
+% Script for abbreviations
+% defines a new environment with one arguement
+\newenvironment{bfscript}[1] {
+ % defines as list
+ \begin{list}
+ % No labelmarks!
+ {}
+ {\settowidth{\labelwidth}{\small #1}
+  % sets the left margin to 0 because there is no labelmark
+  \setlength{\leftmargin}{\labelwidth}
+  % add labelsep (0, no labelmark) to the margin
+  \addtolength{\leftmargin}{\labelsep}
+  % Separation of paragraphs in one topic
+  \parsep 0.0ex plus 0.2ex minus 0.2ex
+  % Separation of two topics
+  \itemsep -0.3ex
+  % sets the label to: small and fills with whitspace to the text
+  \renewcommand{\makelabel}[1]{\small ##1\hfill}}}
+ {\end{list}
+}
+
+% PDF-Settings
+\def\pdfBorderAttrs{/Border [0 0 0] } % No border arround Links
+\pdfcompresslevel=9
+\hypersetup{colorlinks,linkcolor=blue,filecolor=red,urlcolor=black,citecolor=blue}
+
+% Debug block settings
+\renewcommand{\author}{@Author}
+\renewcommand{\date}{@Date} 
+\newcommand{\filenameReportMain}{@Filename.tex}
+\newcommand{\releases}{none}
+\newcommand{\changelog}{none}
+\newcommand{\corrected}{none}
+
+% Activate or deactivate Debug mode for sections
+%\newif\ifDEBUG
+%\DEBUGfalse
+
+% Own settings
+\newfloat{lstfloat}{htbp}{lop}
+\floatname{lstfloat}{Listing}
+\lstset{
+	language=c++,
+	frame=single,
+	basicstyle=\ttfamily,
+	captionpos=b,
+	tabsize=2
+}
+
+\begin{comment}
+\definecolor{darkgreen}{rgb}{0.0, 0.2, 0.13}
+\definecolor{listinggray}{gray}{0.9} %0.9
+\definecolor{lbcolor}{rgb}{1,1,1}
+\lstset{
+	backgroundcolor=\color{lbcolor},
+	tabsize=4,    
+	%   rulecolor=,
+	language=[GNU]C++,
+	basicstyle=\scriptsize,
+	upquote=true,
+	aboveskip={1.5\baselineskip},
+	columns=fixed,
+	showstringspaces=false,
+	extendedchars=false,
+	breaklines=true,
+	prebreak = \raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+	frame=single,
+	numbers=left,
+	showtabs=false,
+	showspaces=false,
+	showstringspaces=false,
+	identifierstyle=\ttfamily,
+	keywordstyle=\color[rgb]{0,0,1},
+	commentstyle=\color[rgb]{0.026,0.112,0.095},
+	stringstyle=\color[rgb]{0.627,0.126,0.941},
+	numberstyle=\color[rgb]{0.205, 0.142, 0.73},
+	%        \lstdefinestyle{C++}{language=C++,style=numbers}’.
+}
+\lstset{
+	morekeywords={uint8_t, uint16_t, int8_t, int16_t, HIGH, LOW},
+	backgroundcolor=\color{lbcolor},
+	tabsize=4,
+	language=C++,
+	captionpos=b,
+	tabsize=3,
+	frame=lines,
+	numbers=left,
+	numberstyle=\tiny,
+	numbersep=5pt,
+	breaklines=true,
+	showstringspaces=false,
+	basicstyle=\footnotesize,
+	%  identifierstyle=\color{magenta},
+	keywordstyle=\color[rgb]{0,0,1},
+	commentstyle=\color{darkgreen},
+	stringstyle=\color{red}
+}
+\end{comment}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 3.HYPENATION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% add special hypernations here
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 4.Begin of the real document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+% reads the new commands
+\input{commands}
+% inserts the Titlepage
+\pdfbookmark{Titlepage}{title}
+\include{misc/Titlepage}
+
+% defines the pagestyle of the document to fancy package
+\pagestyle{fancy}
+
+% redefinitions of the plain style for the first pages of chapters.
+\fancypagestyle{plain}{
+\fancyhf{}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}}
+
+\renewcommand{\chaptermark}[1]{\markboth{}{\slshape\small{#1}}}
+\renewcommand{\sectionmark}[1]{}
+
+% After the preface use arabic numbers for pagecounting
+% is already defined in titlepage.tex
+
+% vertical separaiont of paragraphs
+\setlength{\parskip}{1.5ex plus 1ex minus 0.5ex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 5.Include your Chapters here
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include{img/tikz/tikzLib}
+\input{sections/einleitung}
+\input{sections/aufbau}
+\input{sections/elektronik}
+\input{sections/software}
+\input{sections/zusammenfassung}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 6.Appendices
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% defines epmty pages except pagenumber in the footer
+% generagtes the List of Figures (extension: *.lof)
+%\listoffigures
+% generates the List of Tables (extension: *.lot)
+%\listoftables
+
+% generates the List of Examples and adds it to the toc. If you make use of
+% the example-environment uncomment the following lines.
+%\listof{example}
+%{List of Examples
+% \protect
+% \addcontentsline{toc}{chapter}{List of Examples}
+%}
+\pagestyle{empty}
+\newpage
+\pagestyle{fancyplain}
+
+% generates the aux-Files with citations
+% \nocite{*}
+% this reads the bbl files and makes the bibliography
+\newpage
+\setlength{\bibsep}{0.0pt}
+
+\renewcommand\bibname{Wissenschaftliche Literatur}
+\addcontentsline{toc}{chapter}{Wissenschaftliche Literatur}
+
+\label{lit}
+\bibliography{literature}
+% the style of bibliography
+% start a new page
+\bibliographystyle{alphadin}
+
+
+\addcontentsline{toc}{chapter}{Internet Referenzen}
+\def\@newusecounter#1{\@nmbrlisttrue\def\@listctr{#1}}
+\let\newusecounter\usecounter
+
+\label{wlit}
+\bibliographyweblink{weblinks}
+\bibliographystyleweblink{abbrv}
+\newpage
+
+\listoffigures
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 7.Official copyright statement
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include{misc/CopyrightStatement}
+
+\end{document}
+
+
+
+
+
+
+
+

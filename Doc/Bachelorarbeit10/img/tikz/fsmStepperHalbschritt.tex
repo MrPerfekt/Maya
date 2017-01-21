@@ -1,0 +1,31 @@
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=3cm,
+thick,main node/.style={circle,fill=blue!20,draw,font=\sffamily\Large\bfseries}]
+
+\node[main node] (1) {1 1};
+\node[main node] (2) [below left of=1] {0 1};
+\node[main node] (3) [below right of=2] {-1 1};
+\node[main node] (4) [right of=3] {-1 0};
+\node[main node] (5) [right of=4] {-1 -1};
+\node[main node] (6) [above right of=5] {0 -1};
+\node[main node] (7) [above left of=6] {1 -1};
+\node[main node] (8) [left of=7] {1 0};
+
+\path[every node/.style={font=\sffamily\small}]
+(1) edge 				node [below] 	{F} (8)
+(2) edge 				node [below]	{F} (1)
+(3) edge 				node [above]	{F} (2)
+(4) edge 				node [above]	{F} (3)
+(5) edge 				node [above]	{F} (4)
+(6) edge 				node [above]	{F} (5)
+(7) edge 				node [below]	{F} (6)
+(8) edge 				node [below]	{F} (7)
+(1) edge [bend right] 	node [above] 	{B} (2)
+(2) edge [bend right] 	node [below] 	{B} (3)
+(3) edge [bend right] 	node [below] 	{B} (4)
+(4) edge [bend right] 	node [below] 	{B} (5)
+(5) edge [bend right] 	node [below] 	{B} (6)
+(6) edge [bend right] 	node [above] 	{B} (7)
+(7) edge [bend right] 	node [above] 	{B} (8)
+(8) edge [bend right] 	node [above] 	{B} (1)
+;
+\end{tikzpicture}

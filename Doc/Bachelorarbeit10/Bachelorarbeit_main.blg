@@ -1,0 +1,83 @@
+This is BibTeX, Version 0.99d (TeX Live 2016/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: Bachelorarbeit_main.aux
+A level-1 auxiliary file: misc/Titlepage.aux
+A level-1 auxiliary file: img/tikz/tikzLib.aux
+A level-1 auxiliary file: img/tikz/rotaryEncoderDisc.aux
+The style file: alphadin.bst
+A level-1 auxiliary file: misc/CopyrightStatement.aux
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: literature.bib
+Warning--entry type for "web:quadrantendiode" isn't style-file defined
+--line 151 of file literature.bib
+Warning--entry type for "web:schrittmotor" isn't style-file defined
+--line 167 of file literature.bib
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Too many commas in name 1 of "Gerhard Goos, Juris Hartmanis, Jan van Leeuwen, Andy M. Tyrrell, Pauline C. Haddow, Jim Torresen" for entry book:evolvableSystems
+while executing---line 3181 of file alphadin.bst
+Too many commas in name 1 of "Gerhard Goos, Juris Hartmanis, Jan van Leeuwen, Andy M. Tyrrell, Pauline C. Haddow, Jim Torresen" for entry book:evolvableSystems
+while executing---line 3181 of file alphadin.bst
+Too many commas in name 1 of "Gerhard Goos, Juris Hartmanis, Jan van Leeuwen, Andy M. Tyrrell, Pauline C. Haddow, Jim Torresen" for entry book:evolvableSystems
+while executing---line 3181 of file alphadin.bst
+Too many commas in name 1 of "Gerhard Goos, Juris Hartmanis, Jan van Leeuwen, Andy M. Tyrrell, Pauline C. Haddow, Jim Torresen" for entry book:evolvableSystems
+while executing---line 3181 of file alphadin.bst
+Too many commas in name 1 of "Gerhard Goos, Juris Hartmanis, Jan van Leeuwen, Andy M. Tyrrell, Pauline C. Haddow, Jim Torresen" for entry book:evolvableSystems
+while executing---line 3181 of file alphadin.bst
+Too many commas in name 1 of "Gerhard Goos, Juris Hartmanis, Jan van Leeuwen, Andy M. Tyrrell, Pauline C. Haddow, Jim Torresen" for entry book:evolvableSystems
+while executing---line 3181 of file alphadin.bst
+Warning--empty edition in book:elMaschienenAktuatoren
+Too many commas in name 1 of "Gerhard Goos, Juris Hartmanis, Jan van Leeuwen, Andy M. Tyrrell, Pauline C. Haddow, Jim Torresen" for entry book:evolvableSystems
+while executing---line 3311 of file alphadin.bst
+Too many commas in name 1 of "Gerhard Goos, Juris Hartmanis, Jan van Leeuwen, Andy M. Tyrrell, Pauline C. Haddow, Jim Torresen" for entry book:evolvableSystems
+while executing---line 3311 of file alphadin.bst
+Too many commas in name 1 of "Gerhard Goos, Juris Hartmanis, Jan van Leeuwen, Andy M. Tyrrell, Pauline C. Haddow, Jim Torresen" for entry book:evolvableSystems
+while executing---line 3311 of file alphadin.bst
+Too many commas in name 1 of "Gerhard Goos, Juris Hartmanis, Jan van Leeuwen, Andy M. Tyrrell, Pauline C. Haddow, Jim Torresen" for entry book:evolvableSystems
+while executing---line 3311 of file alphadin.bst
+Too many commas in name 1 of "Gerhard Goos, Juris Hartmanis, Jan van Leeuwen, Andy M. Tyrrell, Pauline C. Haddow, Jim Torresen" for entry book:evolvableSystems
+while executing---line 3311 of file alphadin.bst
+Too many commas in name 1 of "Gerhard Goos, Juris Hartmanis, Jan van Leeuwen, Andy M. Tyrrell, Pauline C. Haddow, Jim Torresen" for entry book:evolvableSystems
+while executing---line 3311 of file alphadin.bst
+Warning--empty edition in book:pulseOximeters
+You've used 10 entries,
+            3183 wiz_defined-function locations,
+            710 strings with 6176 characters,
+and the built_in function-call counts, 6279 in all, are:
+= -- 685
+> -- 80
+< -- 208
++ -- 201
+- -- 27
+* -- 392
+:= -- 1001
+add.period$ -- 18
+call.type$ -- 10
+change.case$ -- 40
+chr.to.int$ -- 9
+cite$ -- 12
+duplicate$ -- 150
+empty$ -- 493
+format.name$ -- 46
+if$ -- 1290
+int.to.chr$ -- 2
+int.to.str$ -- 0
+missing$ -- 16
+newline$ -- 68
+num.names$ -- 30
+pop$ -- 43
+preamble$ -- 1
+purify$ -- 60
+quote$ -- 0
+skip$ -- 299
+stack$ -- 0
+substring$ -- 794
+swap$ -- 28
+text.length$ -- 28
+text.prefix$ -- 6
+top$ -- 0
+type$ -- 48
+warning$ -- 2
+while$ -- 38
+width$ -- 12
+write$ -- 142
+(There were 12 error messages)

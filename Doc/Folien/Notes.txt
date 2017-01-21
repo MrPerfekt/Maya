@@ -1,0 +1,37 @@
+Sehr geehrte Damen und Herren
+Es freut mich Ihnen meine Bachelor Arbeit Präsentieren zu dürfen
+Das Ziel dieser Arbeit war, einen neuen Prototypen für das Mikrocomputer Labor zu entwerfen.
+Wie die meisten Prototypen musste auch dieser, etwas anspruchsfolles, spannendes und für die Studierenden Motivierendes werden.
+Die Vorgabe für diesen war, das eine Laserablenkeinheit vorhanden ist und auf ein bewegliches ziehl geziehlt werden muss.
+
+Mit verschiedenen Prototypen entwickelte sich das ursprüngliche Pendel zu einer Scheibe.
+Die beiden zentralen Objekte sind die Vier-Quadranten-Fotodioden zur detektion des Lasers, diese ist auf unten auf der Scheibe angedeutet und der Laserablenkeinheit.
+
+Die Laserablenkeinheit ist aufgebaut aus zwei Schrittmotoren, einen für jede Achse, auf welchen ein Spiegel montiert ist.
+Zur Überprüfung, ob die Zielposition des Lasers in einem gültigen Bereich ist, sind auch Positionsmarken auf den Spiegel angebracht.
+Diese Positionsmarken werden von Lichtschranken überprüft.
+
+Der Prinzipielle Hardware-Aufbau dieses Prototypen unterteilt sich in die Sensoren und Aktuatoren, das Arduino Entwicklungsboard mit einem SAM3X von Atmel und das Nucleo board mit dem STM32F3 von ST.
+Die Aufgabe des SAM ist es, die Hardware zu verwalten und die Kommunikation mit dem STM.
+Auf dem STM wird der Code der Laborteilnehmer ausgeführt.
+Damit eventuelle Fehler in den Signalen der Laborteilnehmer erkannt werden können und unterbunden werden können ist der STM nur mit dem SAM verbunden.
+Der SAM controller überprüft alle Steuerbefehle und gibt diese an die Hardware weiter. (1:47)
+Als Sensoren stehen die Lichtschranken der Schrittmotoren, ein Rotationsencoder für den drehwinkel der Scheibe, und Fotodioden zur Verfügung. 
+Aktuatoren stehen der Antriebsmotor der Scheibe zur verfügung, für welchem nur die Geschwindigkeit gesetzt werden kann und die beiden Schrittmotoren der Spiegelablenkeinheit.
+
+Nun möchte ich das Interessanteste Thema dieser Arbeit etwas näher erleutern - die Regelung der Spiegelablenkeinheit.
+Der Regler ist ein 3-Punktregler und arbeitet mit den von den Fotodioden gemessenen Intensitäten.
+In diesem 3-Dimenionalen Bild sehen sie den Verlauf des Ausgangssignals einer Photodiode, wenn diese mit dem Laser abgetastet wird.
+Der Abstand zweier Punkte ist ein Halbschritt des Schrittmotors und die Höhe gibt den Wert der Eingangsdaten an welcher auf 1000 Normiert ist.
+In diesem Bild ist sehr deutlich sichtbar, dass die Photodiode bereits in der Sättigung ist.
+Wenn die Eingangsdaten in die Sättigung gehen ist dies natürlich schlecht für die Regelung.
+
+Werden nun alle 4 Dioden in einem Bild dargestellt, sieht man allerding, dass kein bereich existiert, bei dem alle 4 Dioden Sättigen.
+Dadurch ist wieder eine Regelung möglich und man würde wichtige Informationen verlieren, wenn die Verstärkung reduziert werden würde.
+Nun müssen diese diese Eingangsdaten so aufbereitet werden, dass diese Für die Regelung verwendet werden können.
+Schließlich wird werden nur 2 Eingangswerte benötigt und nicht 4.
+2 Deshalb, weil wir für jede Achse einen Regler benötigen.
+Eine gute Möglichkeit, die Daten für den ersten Regler zu verarbeiten ist es die Maximalwerte der linken und Rechten Dioden voneinander zu subtrahieren.
+
+Dies ist in Folgendem Bild dargestellt.
+Hier gibt jeder Punkt an, ob der Laser zu weit links oder zu weit rechts gewesen ist.

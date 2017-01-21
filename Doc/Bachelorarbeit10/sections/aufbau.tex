@@ -1,0 +1,191 @@
+\chapter{Aufbau}
+\label{chap:aufbau}
+
+Dieses Kapitel befasst sich mit dem Aufbau, welcher alle Sensoren und Aktuatoren miteinander verbindet.
+Die erste Überlegung war, den beweglichen Teil als Pendel auszuführen.
+Diese Idee ist zwar gut, allerdings ist das Pendel durch die Reibung von den Schleifringen für die Elektronik zu stark gebremst worden.
+Dadurch musste mit dem Magneten, welcher das Pendel bei jedem Nulldurchgang beschleunigte, eine relativ große Kraft übertragen werden.
+Das Problem an dieser Lösung war, dass das Pendel nicht mehr frei schwingt, sondern deutliche Unregelmäßigkeiten beobachtet werden können.
+Als Lösung wurde der Entwurf mit dem Pendel überarbeitet und es wurde stattdessen eine Scheibe verwendet.
+Der Antrieb erfolgt durch einen Schrittmotor, dadurch kann eine vorgegebene Drehgeschwindigkeit eingestellt werden.
+Ein weiterer Vorteil ist, dass die vorgegebene Geschwindigkeit sehr konstant gehalten werden kann.
+Dieser Aufbau wird in Abbildung~\ref{fig:3dSchreibe} dargestellt.
+In dieser 3D-Zeichnung kann man auch die Lichtschranken für den Drehgeber, die Schrittmotoren für die Spiegel und deren Lichtschranken erkennen.
+
+\begin{figure}[!h] \centering
+\includegraphics[width=0.7\textwidth]{img/Sketchup/Disc00.PNG}
+\caption{3D-Modell des Prototypen.}
+\label{fig:3dSchreibe}
+\end{figure}
+
+
+\section{Spiegelablenkeinheit}
+Die Berechnung der Winkel für die Spiegel wird für die Studenten, welche mit diesem Modell arbeiten werden, ein Kernpunkt.
+Natürlich müssen die maximalen Winkel, welche mit eingeschaltetem Laser erreicht werden dürfen, bereits vorher bekannt sein.
+Im folgenden wird näher darauf eingegangen.
+
+\subsection{Berechnung der Winkel}
+\begin{figure}[!h] \centering
+	\input{img/tikz/angles}
+	\caption{Winkel bei der Laserablenkeinheit.}
+	\label{fig:angles}
+\end{figure}
+
+In Abbildung~\ref{fig:angles} sind die Winkel der Spiegelablenkeinheit dargestellt.
+Hierbei sind die Laserstrahlen als dicke Linien und die Normale auf den Spiegel als strichlierte Linie dargestellt.
+Dabei bezeichnet $\gamma$ den Winkel, welcher die Normale des Spiegels mit dem einfallenden Laserstrahl einschließt.
+$\alpha$ bezeichnet den einschließenden Winkel zwischen dem Ausfallstrahl und der Grundplatte.
+Diese Winkel können wie folgt berechnet werden.
+\begin{equation}
+\alpha=arctan(a/b)
+\end{equation}
+\begin{equation}
+\gamma=\frac{90^\circ-\alpha}{2}
+\end{equation}
+Um zu berechnen wo der Laserstrahl auf die Wand projiziert wird, muss nur auf $a$ umgeformt werden.
+\begin{equation} \label{equ:posOfLaser}
+a=b \cdot tan(90^\circ-2 \cdot \gamma)
+\end{equation}
+Diese Überlegungen gelten sowohl für die horizontale als auch die vertikale Richtung.
+
+
+\subsection{Marken für Endpositionen}
+
+\begin{figure}[!h] \centering
+	\includegraphics[width=0.7\textwidth]{img/Sketchup/Lasercontroll00.PNG}
+	\caption{3D-Modell der Spiegelablenkeinheit.}
+	\label{fig:laserablenkeinheit}
+\end{figure}
+
+Die Überlegungen, welche Winkel eingestellt werden müssen, sind nicht nur für die Positionierung des Lasers wichtig, sondern auch für die Berechnung der Bereichsmarken.
+Diese Marken geben an, ob bei dieser Winkeleinstellung der Laserstrahl gefahrlos aktiviert werden kann.
+Dies ist nur dann der Fall, wenn der Laserpunkt auf der Rückwand des Prototypen projiziert wird.
+Dazu wird im Modell eine Markierung auf den Motoren angebracht, welche bei der maximalen Auslenkung einen Lichtschranken unterbricht.
+
+Sei $a$ in dieser Überlegung die maximal erlaubte Auslenkung auf der Projektionsfläche, welche gefahrlos eingestellt werden darf.
+Zusätzlich nehmen wir an, dass die Lichtschranken entlang des einfallenden Lasers positioniert sind.
+Das bedeutet, dass der Laser abgeschaltet wird, sobald eine gedachte Marke in Abbildung~\ref{fig:angles} die y Achse überschreitet.
+Diese Marke ist winkelfest mit der strichlierten Normale und dem Spiegel verbunden.
+Unter diesen Voraussetzungen gibt $\gamma$ den Winkel an, mit welchem die Marke konstruiert werden muss.
+Dieser Winkel reicht von dem Ende der Marke bis zur Normale des Spiegels.
+Das 3D-Modell der fertigen Konstruktion ist in Abbildung~\ref{fig:laserablenkeinheit} ersichtlich.
+
+
+
+\section{Inkrementalgeber}
+
+\subsection{Funktionsweise}
+
+\begin{figure}[!h] \centering
+	\begin{minipage}[t]{.49\linewidth} \centering
+		\input{img/tikz/quadraturePattern}
+	\end{minipage}
+	\begin{minipage}[t]{.49\linewidth} \centering
+		\input{img/tikz/quadratureDiagram}
+	\end{minipage}
+	\caption{Funktionsweise eines Drehgebers.}
+	\label{fig:drehgeber}
+\end{figure}
+
+Ziel eines Drehgebers ist es, die Position der Scheibe zu ermitteln.
+Je nach Aufgabenstellung gibt es dazu verschiedene Arten von Drehgebern.
+Grundsätzlich wird zwischen Absolutgebern und Inkrementalgebern unterschieden.
+Erstere haben auf der Scheibe, welche in n Segmente unterteilt ist, genau $log_2(n)$ Spuren mit einem Binärcode.
+Jede Spur wird mit einem separaten Sensor ausgewertet.
+Dadurch kann immer ausgelesen werden, in welchem Segment sich die Leseköpfe der Sensoren befinden.
+
+Nachteilig an einen Absolutgeber ist, dass eine hohe Anzahl an Sensoren und auch an Spuren auf der Scheibe benötigt wird.
+Dadurch ist er für dieses Projekt nicht von Bedeutung, da für eine annehmbare Schrittauflösung zu viele Sensoren verwendet werden müssten.
+
+Bei einem Inkrementalgeber kann man die Anzahl der Sensoren reduzieren, indem man nur zwei Bahnen verwendet, welche je ein Rechtecksignal produzieren.
+Die beiden Rechtecksignale sind zueinander eine Viertelperiode versetzt.
+Eine andere Variante, welche noch einfacher realisierbar ist, ist nur eine Spur zu verwenden und stattdessen die Sensoren um eine Viertelperiode voneinander versetzt anzuordnen.
+Eine Illustration einer solchen Abnehmerkonstellation ist in Abbildung~\ref{fig:drehgeber} dargestellt. \cite[333]{book:elektrischeMesstechnik}
+
+\begin{figure}[!h] \centering
+	\includegraphics[width=0.7\textwidth]{img/PicturesPlots/Encoder/Normal/COPY/CONVERT/SCRN0117_Cutted.jpg}
+	\caption{Aufnahme des Quadratursignals der drehbaren Scheibe.}
+	\label{fig:quadratureSignalNormal}
+\end{figure}
+
+Das Ausgangssignal hat nun die Form eines 2-Bit-Gray-Codes.
+Wenn nun das Signal ausgewertet wird, kann bei jeder Flanke die Richtung des Schrittes ermittelt werden.
+In Abbildung~\ref{fig:quadratureSignalNormal} ist eine Aufnahme, des von diesem Prototypen produzierten Signals, abgebildet.
+
+
+\subsection{Betrachtung durch endliche Automaten}
+\label{chap:aufbau:aufbauInkrementalgeberFSM}
+
+\begin{figure}[!h] \centering
+	\begin{minipage}[t]{.5\linewidth} \centering
+		\input{img/tikz/quadratureStates}
+	\end{minipage}
+	\caption{FSM eines Drehgebers.}
+	\label{fig:drehgeberZustaende}
+\end{figure}
+
+Eine einfache Betrachtungsweise, welche sehr elegant in Software implementiert werden kann, ist die Darstellung durch einen endlichen Automaten, auch Zustandsmaschine oder Finite-State-Machine (FSM) genannt.
+Dabei gibt es vier Zustände und jeder stellt eine Kombination der beiden Eingänge dar.
+Ein Zustandswechsel wird durch einen logischen Wechsel eines Einganges ausgelöst und gibt als Ausgabe entweder einen Vorwärts- oder einen Rückwärtsschritt zurück.
+Um die Gesamtposition zu errechnen müssen nur alle Schritte vorzeichenrichtig gezählt werden.
+
+Eine FSM, welcher den geschilderten Sachverhalt implementiert, ist in Abbildung~\ref{fig:drehgeberZustaende} dargestellt.
+Damit die abgebildete Graphik eine gültige FSM wird, müssen noch Anfangszustand und gültige Endzustände eingezeichnet werden.
+Der Anfangszustand ergibt sich jedoch daraus, wie die Encoderscheibe bei der Initialisierung des Controllers steht und kann deswegen noch nicht eingezeichnet werden.
+Der Endzustand ist der letzte eingelesene Zustand. \cite[51]{book:evolvableSystems}
+
+
+\subsection{Fehlerquellen}
+
+Bei dieser Variante gibt es allerdings bestimmte Eigenschaften, welche bei der Implementierung berücksichtigt werden müssen.
+Da dies nur eine inkrementelle Positionierung ist, ist der Startpunkt nicht durch das Sensorsignal ermittelbar.
+Weiteres werden einmalige Fehler aufaddiert und können nur mit dem Rotationsencoder nicht mehr korrigiert werden.
+Da bei Inkrementalgebern mit hoher Schrittauflösung sehr viele Wechsel von Flanken verarbeitet werden müssen, können bei hohen Drehgeschwindigkeiten Schritte verloren gehen.
+Selbst eine sehr effiziente Implementierung mit Interrupts ist nicht für jeden Inkrementalgeber ausreichend.
+Abhilfe schafft in diesem Fall nur die Verwendung eines Mikrocontrollers mit einem eingebauten Quadraturencoder oder einer speziellen zusätzlichen Hardware.
+
+
+\subsection{Nulldurchgangsdetektion mit großer Schrittmarke}
+\label{chap:aufbau:bigMark}
+
+Um ohne zusätzliche Sensoren den Nulldurchgang detektieren zu können, können in die Encoderscheibe zusätzliche Information eingefügt werden.
+Eine Variante ist, dass ein einziger Puls mit dreifacher Länge eingefügt wird.
+Dadurch ist ein Nulldurchgang erkennbar.
+Allerdings verliert man dadurch die Möglichkeit, schnelle Richtungswechsel detektieren zu können.
+Nimmt man nun an, dass die Anzahl an Richtungswechsel sehr klein im Vergleich zu den Umdrehungen sind, kann man durch diese Zusatzinformation sowohl die Drehrichtung als auch die Nulldurchgänge erkennen.
+Für diesen Prototypen wurde eine Marke mit der dreifachen Länge verwendet.
+Dies ist gleich einem ausgefüllten Zwischenraum der Encoder-Scheibe.
+
+\begin{figure}[!h] \centering
+	\includegraphics[width=0.7\textwidth]{img/PicturesPlots/Encoder/BigStep/COPY/CONVERT/SCRN0110_Cutted.jpg}
+	\caption{Aufnahme des Quadratursignals der drehbaren Scheibe.}
+	\label{fig:quadratureSignalBig}
+\end{figure}
+
+Eine Aufnahme des Signals bei einer großen Marke ist in Abbildung~\ref{fig:quadratureSignalBig} abgebildet.
+Wenn diese Schrittkombination mit der in Kapitel~\ref{chap:aufbau:aufbauInkrementalgeberFSM} erläuterten FSM abgearbeitet wird, kann die Marke dadurch erkannt werden, dass genau ein Schritt in die falsche Richtung generiert wird.
+Dies zu erkennen ist trivial.
+Wichtig ist noch anzumerken, dass diese Marke doppelt auftritt, für jeden Sensor einmal.
+Als Nullpunkt darf aber nur eine der beiden Stellen verwendet werden.
+Für eine korrekte Funktionsweise ist zusätzlich ein ausreichend großer Schrittabstand zwischen den beiden aufnehmenden Sensoren nötig.
+
+Nun müssen allerdings die Schritte, welche durch dieses neue Muster verloren gegangen sind, durch virtuelle Schritte ersetzt werden.
+Bei jeder Detektion einer großen Marke wird nun ein Rückwärtsschritt statt einem Vorwärtsschritt detektiert und es gehen aufgrund der fehlenden Flanken zwei Pulse verloren.
+Daher müssen bei jeder der beiden Detektionen des breiten Impulses vier Impulse addiert werden.
+Nur bei einem der beiden darf die aktuelle Schrittzahl auf Null gesetzt werden.
+
+
+\subsection{Beispielscheibe für Inkrementalgeber}
+
+\begin{figure}[!h] \centering
+	\include{img/tikz/rotaryEncoderDisc}
+	\caption{Scheibe für den Rotationsencoder.}
+	\label{fig:rotaryEncoderDisc}
+\end{figure}
+
+Die Scheibe für diesen Prototypen wurde mit Latex und Tikz gezeichnet.
+Dabei wurde zum Testen ein Template erstellt, welches beliebig konfiguriert werden kann.
+In Abbildung~\ref{fig:rotaryEncoderDisc} ist die verwendete Scheibe dargestellt.
+Die Aufschriften in der Mitte charakterisieren die Scheiben und geben Informationen für die in der Software einzustellenden Parameter.
+Der oberste Wert ist der Winkel zwischen zwei Impulsen, danach folgen der Winkel und die Pulse zwischen den beiden Detektoren und der unterste Wert gibt die Anzahl der Impulse pro Umdrehung und Sensor an.
+Für die Darstellung in dieser Arbeit wurde die Grafik noch um den Faktor 0,75 verkleinert.
